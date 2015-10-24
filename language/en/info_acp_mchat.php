@@ -64,6 +64,7 @@ $lang = array_merge($lang, array(
 	'MCHAT_LOCATION_EXPLAIN'		=> 'Choose the location of the mChat on the index page.',
 	'MCHAT_TOP_OF_FORUM'			=> 'Top of Forum',
 	'MCHAT_BOTTOM_OF_FORUM'			=> 'Bottom of Forum',
+	'MCHAT_RIGHT_OF_FORUM'			=> 'Right and Top of Forum, depending on user screen size',
 	'MCHAT_REFRESH'					=> 'Refresh',
 	'MCHAT_REFRESH_EXPLAIN'			=> 'Number of seconds before chat automatically refreshes.<br /><em>You are limited from 5 to 60 seconds</em>.',
 	'MCHAT_PRUNE'					=> 'Enable Prune',
