@@ -1145,7 +1145,7 @@ class render_helper
 			'L_MCHAT_ONLINE_EXPLAIN'	=> $this->functions_mchat->mchat_session_time($mchat_session_time),
 			'MCHAT_REFRESH_YES'		=> sprintf($this->user->lang['MCHAT_REFRESH_YES'], $this->config_mchat['refresh']),
 			'L_MCHAT_WHOIS_REFRESH_EXPLAIN'	=> sprintf($this->user->lang['WHO_IS_REFRESH_EXPLAIN'], $this->config_mchat['whois_refresh']),
-			'S_MCHAT_AVATARS'		=> $mchat_avatars,
+			'S_MCHAT_AVATARS'		=> $this->config_mchat['avatars'],
 			'S_MCHAT_LOCATION'		=> $this->config_mchat['location'],
 			'S_MCHAT_SOUND_YES'		=> $this->user->data['user_mchat_sound'],
 			'S_MCHAT_INDEX_STATS'	=> $this->user->data['user_mchat_stats_index'],

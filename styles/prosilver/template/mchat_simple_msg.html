@@ -1,0 +1,20 @@
+<!-- BEGIN mchatrow -->
+<div id="mess{mchatrow.MCHAT_MESSAGE_ID}" class="mChatBG{mchatrow.MCHAT_CLASS} mChatHover">
+    <span style="float:left; font-family:arial; font-size: 11px">
+     <!-- IF not MCHAT_ARCHIVE_MODE and MCHAT_ADD_MESSAGE -->
+          <!-- IF MCHAT_ALLOW_BBCODES -->
+               <!-- IF mchatrow.MCHAT_USERNAME_COLOR -->
+               <a class="mChatScriptLink" href="javascript://" onclick="insert_text('&#64;&nbsp;[b][color={mchatrow.MCHAT_USERNAME_COLOR}]{mchatrow.MCHAT_USERNAME}[/color][/b], ', false);"   title="{L_MCHAT_RESPOND}">
+                <span style="color: {mchatrow.MCHAT_USERNAME_COLOR}"><strong>&#64;</strong></span>
+               </a>
+               <!-- ELSE -->
+               <a href="javascript://" class="mChatScriptLink" onclick="insert_text('&#64;&nbsp;[b]{mchatrow.MCHAT_USERNAME}[/b], ', false);" title="{L_MCHAT_RESPOND}"><strong>&#64;</        strong></a>
+               <!-- ENDIF -->
+          <!-- ELSE -->
+          <a href="javascript://" class="mChatScriptLink" onclick="insert_text('&#64;&nbsp;{mchatrow.MCHAT_USERNAME}, ', false);" title="{L_MCHAT_RESPOND}">&#64;</a>
+          <!-- ENDIF -->
+     <!-- ENDIF -->
+     <span style="font-weight:600;" title="{mchatrow.MCHAT_TIME}">{mchatrow.MCHAT_USERNAME_FULL}:</span> {mchatrow.MCHAT_MESSAGE}</span>
+</div>
+<!-- END mchatrow -->
+

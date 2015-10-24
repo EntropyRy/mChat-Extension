@@ -153,11 +153,13 @@
 			<div id="mChatmain" <!-- IF MCHAT_CUSTOM_PAGE -->class="mChatRowLimitCustom" style="height: {MCHAT_CUSTOM_HEIGHT}px;"<!-- ELSE -->class="mChatRowLimit" style="height: {MCHAT_INDEX_HEIGHT}px;"<!-- ENDIF -->>
 			<!-- ENDIF -->
 			<div id="mChatData">
-	<!-- ENDIF -->
-			<!-- IF S_MCHAT_AVATARS -->
+                <!-- ENDIF -->
+			<!-- IF S_MCHAT_AVATARS == 1 -->
 				<!-- INCLUDE mchat_avatars.html -->
-			<!-- ELSE -->
-				<!-- INCLUDE mchat_no_avatars.html -->
+			<!-- ELSEIF S_MCHAT_AVATARS == 0 -->
+                <!-- INCLUDE mchat_no_avatars.html -->
+            <!-- ELSEIF S_MCHAT_AVATARS == 2 -->
+				<!-- INCLUDE mchat_simple_msg.html -->
 			<!-- ENDIF -->
 		<!-- IF not MCHAT_READ_MODE -->
 					<!-- IF MCHAT_NOMESSAGE_MODE --><div id="mChatNoMessage">{L_MCHAT_NOMESSAGE}</div><!-- ENDIF -->
