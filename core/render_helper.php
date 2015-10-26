@@ -1108,7 +1108,9 @@ class render_helper
 
 		$copyright = base64_decode('PGEgaHJlZj0iaHR0cDovL3JtY2dpcnI4My5vcmciPlJNY0dpcnI4MzwvYT4gJmNvcHk7IDxhIGhyZWY9Imh0dHA6Ly93d3cuZG16eC13ZWIubmV0IiB0aXRsZT0id3d3LmRtengtd2ViLm5ldCI+ZG16eDwvYT4=');
 		add_form_key('mchat_posting');
-		// Template function...
+        // Template function...
+        //print('test:'.$this->helper->route('dmzx_mchat_controller'));
+        //die();
 		$this->template->assign_vars(array(
 			'MCHAT_FILE_NAME'		=> $this->helper->route('dmzx_mchat_controller'),
 			'MCHAT_REFRESH_JS'		=> 1000 * $this->config_mchat['refresh'],

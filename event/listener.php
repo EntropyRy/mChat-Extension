@@ -72,7 +72,9 @@ class listener implements EventSubscriberInterface
 			'core.viewonline_overwrite_location' 	=> 'add_page_viewonline',
 			'core.user_setup'					 	=> 'load_language_on_setup',
 			'core.page_header'					 	=> 'add_page_header_link',
-			'core.index_modify_page_title'		 	=> 'display_mchat_on_index',
+			'core.index_modify_page_title'		 	=> 'display_mchat',
+			'core.display_forums_before'		 	=> 'display_mchat',
+			'core.viewtopic_get_post_data'		 	=> 'display_mchat',
 			'core.posting_modify_submit_post_after'	=> 'posting_modify_submit_post_after',
 		);
 	}
@@ -117,17 +119,18 @@ class listener implements EventSubscriberInterface
 	 * @return null
 	 * @access public
 	 */
-	public function display_mchat_on_index($event)
+	public function display_mchat($event)
 	{
 		$mchat_on_index = $this->config['mchat_on_index'];
 		$mchat_view	= ($this->auth->acl_get('u_mchat_view')) ? true : false;
 
 		if ($mchat_on_index && $mchat_view)
-		{
+        { 
 			$this->template->assign_var('S_MCHAT_ON_INDEX', true);
 
 			$this->render_helper->render_data_for_page(true);
 		}
+        
 	}
 
 	public function posting_modify_submit_post_after($event)

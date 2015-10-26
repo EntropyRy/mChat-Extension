@@ -1,4 +1,4 @@
-<!-- IF MCHAT_ENABLE and S_MCHAT_ON_INDEX and SCRIPT_NAME != "app/chat" and S_MCHAT_LOCATION == 2 -->
+<!-- IF MCHAT_ENABLE and SCRIPT_NAME != "app/chat" and S_MCHAT_LOCATION == 2 -->
 <style>
 @media only screen and (min-width: 1050px), only screen and (min-device-width: 1050px) {
     #page-body {
@@ -7,6 +7,7 @@
         float: left;
     }
     #page-body2{
+        padding-top: 10px;
         width: 29%;
         float:right;
     }
@@ -18,12 +19,17 @@
         float: none;
     }
     #page-body2{
+        padding-top: 10px;
         width: 100%;
         float: none;
+    }
+    #mChatmain{
+        height: 165px !important;
     }
 }    
 </style>
     <div id="page-body2">
         <!-- INCLUDE mchat_body.html -->
     </div>
+
 <!-- ENDIF -->
