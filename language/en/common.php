@@ -108,6 +108,7 @@ $lang = array_merge($lang, array(
 	'UCP_PROFILE_MCHAT'	=> 'mChat Preferences',
 	'DISPLAY_MCHAT' 	=> 'Display mChat on Index',
 	'SOUND_MCHAT'		=> 'Enable mChat sound',
+	'MOBILE_MCHAT'		=> 'Mobile mChat before the forums',
 	'DISPLAY_STATS_INDEX'	=> 'Display the Who is Chatting stats on index page',
 	'DISPLAY_NEW_TOPICS'	=> 'Display new topics in the chat',
 	'DISPLAY_AVATARS'	=> 'Display avatars in the chat',

@@ -1150,6 +1150,7 @@ class render_helper
 			'S_MCHAT_AVATARS'		=> $this->config_mchat['avatars'],
 			'S_MCHAT_LOCATION'		=> $this->config_mchat['location'],
 			'S_MCHAT_SOUND_YES'		=> $this->user->data['user_mchat_sound'],
+			'S_MCHAT_MOBILE_BEFORE'		=> $this->user->data['user_mchat_mobile_before'],
 			'S_MCHAT_INDEX_STATS'	=> $this->user->data['user_mchat_stats_index'],
 			'U_MORE_SMILIES'		=> append_sid("{$this->phpbb_root_path}posting.{$this->phpEx}", 'mode=smilies'),
 			'U_MCHAT_RULES'			=> $this->helper->route('dmzx_mchat_controller', array('mode' => 'rules')),
