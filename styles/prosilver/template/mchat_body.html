@@ -70,7 +70,8 @@
 			var mChatNewMessageAlert = '{LA_MCHAT_NEW_CHAT}';
 			var mChatNoMessageInput = '{LA_MCHAT_NOMESSAGEINPUT}';
 			var mChatNoMessage = '{LA_MCHAT_NOMESSAGE}';
-			var mChatEditInfo = '{LA_MCHAT_EDITINFO}';
+            var mChatEditInfo = '{LA_MCHAT_EDITINFO}';
+            var mChatTitleFlashDuration = '{S_MCHAT_TITLEFLASHDURATION}';
 			var mChatNoAccess = '{LA_MCHAT_NOACCESS}';
 			var mChatFlood = '{LA_MCHAT_FLOOD}';
 			var mChatDelConfirm = '{LA_MCHAT_DELCONFIRM}';
@@ -151,7 +152,7 @@
 			<!-- IF not MCHAT_ARCHIVE_MODE -->
 
             <div id="mChatmain" <!-- IF MCHAT_CUSTOM_PAGE -->class="mChatRowLimitCustom" style="height: {MCHAT_CUSTOM_HEIGHT}px;"<!-- ELSE -->class="mChatRowLimit" style="height: {MCHAT_INDEX_HEIGHT}px;"<!-- ENDIF -->>
-            <!-- IF not MCHAT_MESSAGE_TOP and SCRIPT_NAME=='index' --> 
+                <!-- IF not MCHAT_MESSAGE_TOP and SCRIPT_NAME=='index' -->
             {{ block('form') }}
             <!-- ELSEIF not MCHAT_MESSAGE_TOP and SCRIPT_NAME!='index' -->
             <div style="text-align:center;">Message writing allowed only in index page</div>

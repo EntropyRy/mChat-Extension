@@ -36,6 +36,7 @@ class ucp_mchat_module
 					'user_mchat_avatars'		=> $request->variable('user_mchat_avatars', (bool) $user->data['user_mchat_avatars']),
 					'user_mchat_input_area'		=> $request->variable('user_mchat_input_area', (bool) $user->data['user_mchat_input_area']),
 					'user_mchat_mobile_before'		=> $request->variable('user_mchat_mobile_before', (bool) $user->data['user_mchat_mobile_before']),
+                    'user_mchat_titleflash_duration'        => $request->variable('user_mchat_titleflash_duration', (int) $user->data['user_mchat_titleflash_duration']),
 				);
 
 				add_form_key('ucp_mchat');
@@ -56,7 +57,8 @@ class ucp_mchat_module
 							'user_mchat_topics'		=> $data['user_mchat_topics'],
 							'user_mchat_avatars'	=> $data['user_mchat_avatars'],
 							'user_mchat_input_area'	=> $data['user_mchat_input_area'],
-							'user_mchat_mobile_before'	=> $data['user_mchat_mobile_before'],
+                            'user_mchat_mobile_before'	=> $data['user_mchat_mobile_before'],
+                            'user_mchat_titleflash_duration'        => $data['user_mchat_titleflash_duration'],
 						);
 
 						if (sizeof($sql_ary))
@@ -91,6 +93,7 @@ class ucp_mchat_module
 					'S_AVATARS_MCHAT'	=> $data['user_mchat_avatars'],
 					'S_INPUT_MCHAT'		=> $data['user_mchat_input_area'],
 					'S_MOBILE_MCHAT'		=> $data['user_mchat_mobile_before'],
+					'S_MCHAT_TITLEFLASHDURATION'		=> $data['user_mchat_titleflash_duration'],
 					'S_MCHAT_TOPICS'	=> $config['mchat_new_posts'],
 					'S_MCHAT_INDEX'		=> ($config['mchat_on_index'] || $config['mchat_stats_index']) ? true : false,
 					'S_MCHAT_AVATARS'	=> $mchat_cache['avatars'],

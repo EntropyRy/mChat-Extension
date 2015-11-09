@@ -115,6 +115,7 @@ class mchat_schema extends \phpbb\db\migration\migration
 					'user_mchat_avatars' 	=> array('BOOL', '1'),
 					'user_mchat_input_area' => array('BOOL', '1'),
 					'user_mchat_mobile_before' => array('BOOL', '1'),
+					'user_mchat_titleflash_duration' => array('INT:11', '0'),
 				),
 			),
 		);
@@ -133,7 +134,8 @@ class mchat_schema extends \phpbb\db\migration\migration
 				$this->table_prefix . 'users'	=> array(
 					'user_mchat_index',
 					'user_mchat_sound',
-					'user_mchat_mobile_before',
+                    'user_mchat_mobile_before',
+                    'user_mchat_titleflash_duration',
 					'user_mchat_stats_index',
 					'user_mchat_topics',
 					'user_mchat_avatars',

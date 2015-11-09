@@ -162,7 +162,7 @@ var mChat={
 	},
 	alert:function(){
 	if(!hasFocus||!document.hasFocus()){
-		$jQ.titleAlert(mChatNewMessageAlert)
+		$jQ.titleAlert(mChatNewMessageAlert,{interval:700, duration:mChatTitleFlashDuration, stopOnFocus:true})
 	}
 	},
 	toggle:function(id){
