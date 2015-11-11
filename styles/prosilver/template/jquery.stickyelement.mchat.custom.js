@@ -71,7 +71,7 @@
     Sticky.prototype.updateOffset = function(yOffset) {
         if (!this._lastPosition !== yOffset) {
             // This moves the item
-            console.log(this.animate);
+            //console.log(this.animate);
             if (this.options.animate) {
                 this.element.stop().animate({
                     'top': yOffset
