@@ -37,6 +37,7 @@
         var scrollTop = $(window).scrollTop();
         var height = this.element.outerHeight(true);
         var realStop = this._stop - height;
+        console.log(this._offset);
 
         if (this._parentHeight - this._offset > height && !this._frozen) {
             if (scrollTop >= this._start && scrollTop <= realStop) {

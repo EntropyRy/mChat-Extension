@@ -109,6 +109,7 @@ $lang = array_merge($lang, array(
 	'DISPLAY_MCHAT' 	=> 'Display mChat on Index',
 	'SOUND_MCHAT'		=> 'Enable mChat sound',
 	'MOBILE_MCHAT'		=> 'Mobile mChat before the forums',
+	'MCHAT_FOLLOW'		=> 'mChat follows the scroll',
 	'MCHAT_TITLEFLASHDURATION'		=> 'mChat title flash duration in ms. default: 0 forever (until forcus). Below 700ms disables flashing',
 	'DISPLAY_STATS_INDEX'	=> 'Display the Who is Chatting stats on index page',
 	'DISPLAY_NEW_TOPICS'	=> 'Display new topics in the chat',

@@ -1151,6 +1151,7 @@ class render_helper
 			'S_MCHAT_LOCATION'		=> $this->config_mchat['location'],
 			'S_MCHAT_SOUND_YES'		=> $this->user->data['user_mchat_sound'],
 			'S_MCHAT_MOBILE_BEFORE'		=> $this->user->data['user_mchat_mobile_before'],
+			'S_MCHAT_FOLLOW'		=> $this->user->data['user_mchat_follow'],
 			'S_MCHAT_TITLEFLASHDURATION'		=> $this->user->data['user_mchat_titleflash_duration'],
 			'S_MCHAT_INDEX_STATS'	=> $this->user->data['user_mchat_stats_index'],
 			'U_MORE_SMILIES'		=> append_sid("{$this->phpbb_root_path}posting.{$this->phpEx}", 'mode=smilies'),
