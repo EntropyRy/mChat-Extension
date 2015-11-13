@@ -62,6 +62,10 @@
         this._start = $('#page-body').offset().top + this._offset;
         this._parentHeight = $('#page-body').outerHeight();
         this._stop = this._start + this._parentHeight - this._offset;
+        if ($(window).width()<1050){
+            this._frozen = true;
+        }
+        else {this._frozen = false;}
     };
 
     /**
