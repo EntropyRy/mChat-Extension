@@ -62,7 +62,6 @@
         this._start = $('#page-body').offset().top + this._offset;
         this._parentHeight = $('#page-body').outerHeight();
         this._stop = this._start + this._parentHeight - this._offset;
-        console.log(this);
     };
 
     /**
