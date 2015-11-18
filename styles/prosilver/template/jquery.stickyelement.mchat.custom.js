@@ -37,7 +37,6 @@
         var scrollTop = $(window).scrollTop();
         var height = this.element.outerHeight(true);
         var realStop = this._stop - height;
-        console.log(this._offset);
 
         if (this._parentHeight - this._offset > height && !this._frozen) {
             if (scrollTop >= this._start && scrollTop <= realStop) {
@@ -59,14 +58,11 @@
 
     Sticky.prototype.setBoundaries = function() {
         // This will set the boundaries the stickied item can move between and it's left position
-        this._offset = this.element.position().top;
+        this._offset = -10;
         this._start = $('#page-body').offset().top + this._offset;
         this._parentHeight = $('#page-body').outerHeight();
         this._stop = this._start + this._parentHeight - this._offset;
-        if ($(window).width()<1050){
-            this._frozen = true;
-        }
-        else {this._frozen = false;}
+        console.log(this);
     };
 
     /**
@@ -131,6 +127,11 @@
         'resize': function(e) {
             // Update the position/offset changed on resize and move
             $.each($.fn.sticky._instances, function() {
+                if (!window.matchMedia("(min-width:1051px)").matches){
+                    this.element.css({'top':0});
+                    this._frozen = true;
+                }
+                else {this._frozen = false;}
                 this.update();
             });
         },
