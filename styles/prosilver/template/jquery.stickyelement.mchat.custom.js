@@ -23,6 +23,7 @@
 
     Sticky.prototype.init = function() {
         this.element.addClass("sticky-scroll");
+        this.mediaQueryCheck();
         this.update();
     };
 
@@ -88,6 +89,15 @@
         this._frozen = !this._frozen;
     };
 
+    Sticky.prototype.mediaQueryCheck = function () {
+        if (!window.matchMedia("(min-width:1051px)").matches){
+            this.element.css({'top':0});
+            this._frozen = true;
+        }
+        else {this._frozen = false;}
+
+    };
+
     $.fn.sticky = function(par, options) {
         var method, args, ret = false;
         if (typeof options === "string") {
@@ -126,11 +136,7 @@
         'resize': function(e) {
             // Update the position/offset changed on resize and move
             $.each($.fn.sticky._instances, function() {
-                if (!window.matchMedia("(min-width:1051px)").matches){
-                    this.element.css({'top':0});
-                    this._frozen = true;
-                }
-                else {this._frozen = false;}
+                this.mediaQueryCheck();
                 this.update();
             });
         },
