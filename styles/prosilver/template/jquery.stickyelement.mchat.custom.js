@@ -91,7 +91,7 @@
 
     Sticky.prototype.mediaQueryCheck = function () {
         if (!window.matchMedia("(min-width:1051px)").matches){
-            this.element.css({'top':0});
+            this.element.stop().css({'top':0});
             this._frozen = true;
         }
         else {this._frozen = false;}
