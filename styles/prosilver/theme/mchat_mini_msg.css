@@ -1,0 +1,156 @@
+/**
+*
+* @package mChat ProSilver Style
+* @version 1.3.5 2010-12-02
+* @copyright (c) RMcGirr83 ( http://www.rmcgirr83.org/ )
+* @copyright (c) By Shapoval Andrey Vladimirovich (AllCity) ~ http://allcity.net.ru/
+* @license http://opensource.org/licenses/gpl-license.php GNU Public License
+*
+**/
+
+/* mChat
+------------ */
+div.mChatBG1 {
+	background-color: #FBFBFB;
+	padding: 2px 5px 2px 5px;
+	border-bottom: 1px dotted #DDDDDD;
+	overflow: hidden;
+}
+
+div.mChatBG2 {
+	background-color: #FFFFFF;
+	padding: 2px 5px 2px 5px;
+	border-bottom: 1px dotted #DDDDDD;
+	overflow: hidden;
+}
+
+div.mChatRowLimit {
+	overflow: auto;
+	width: 100%;
+}
+
+div.mChatRowLimitCustom {
+	overflow: auto;
+	width: 100%;
+}
+
+div.mChatPanel {
+	text-align: center;
+	padding: 3px;
+	clear: both;
+}
+
+input.mChatText {
+	cursor: text;
+	width: 50%;
+	background-color: #FFFFFF;
+	border: 1px solid #B4BAC0;
+	color: #333333;
+	padding: 5px 5px 3px 5px;
+	margin: 3px 0px 3px 5px;
+}
+
+input.mChatText:hover {
+	border-color: #11A3EA;
+}
+
+div.mChatHover:hover {
+	background-color: #F6F4D0;
+}
+
+div.mChatBodyFix {
+	width: 100% !important;
+	background-color: #E9F0F5 !important;
+}
+
+div.mChatStatic {
+	padding-left: 5px;
+	font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
+	text-align: left;
+	font-size: 1.1em;
+}
+
+div.mChatStats {
+	padding-left: 5px;
+	margin-top: 2px;
+	font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
+	text-align: left;
+	min-height: 1.3em;
+	font-size: 1.1em;
+	height: auto !important;
+}
+
+div.mChatRefresh {
+	padding-left: 5px;
+	font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
+	text-align: left;
+	font-size: 1.1em;
+	margin-top: 1.5em;
+	clear: both;
+}
+
+input.mChatColor {
+	width: 100%;
+	text-align: center;
+	background-color: #DEE3E7;
+	border-style: none;	
+}
+
+div.mChatMessage {
+	padding: 3px;
+	font-size: 1.1em;
+	width: 98%;
+
+}
+
+a.mChatScriptLink {
+	text-decoration:none;
+}
+
+img.mChatImage{
+	vertical-align: middle;
+}
+
+img.mChatImageLoad {
+	vertical-align: middle;
+	cursor: wait;
+	display: none;
+}
+
+img.mChatImageOk {
+	vertical-align: middle;
+	cursor: help;
+}
+
+img.mChatImageHideImg {
+	vertical-align: middle; 
+	cursor: help; 
+	display: none;
+}
+
+div.mChatSound {
+	position: absolute;
+	left: -1000px;
+	top: -1000px;
+}
+
+.mchat_alert {
+	color: #7E2217;
+	padding: 10px;
+}
+
+#mChatUserList {
+	display: none;
+	float: left;
+}
+
+.mChatAvatars {
+	float: left;
+	padding-right: 5px;
+}
+
+div.avatarMessage {
+	margin-left: 50px;
+	width: 90%;
+	margin-right: 5px;
+}	
