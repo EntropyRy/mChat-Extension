@@ -38,7 +38,7 @@
 <!-- ENDIF -->
 <!-- IF not MCHAT_READ_MODE -->
 <div class="forabg sticky-scroll">
-	<div class="inner"><span class="corners-top"><span><a name="mChat"></a></span></span>
+	<div class="inner"><a name="mChat"></a>
 		<ul class="topiclist">
 			<li class="header">
 				<dl class="icon">
@@ -170,8 +170,8 @@
             <!-- ELSEIF S_MCHAT_AVATARS == 2 -->
 				<!-- INCLUDE mchat_simple_msg.html -->
 			<!-- ENDIF -->
-		    <!-- IF not MCHAT_READ_MODE -->
-                <!-- IF MCHAT_NOMESSAGE_MODE --><div id="mChatNoMessage">{L_MCHAT_NOMESSAGE}</div><!-- ENDIF -->
+			<!-- IF not MCHAT_READ_MODE -->
+			<!-- IF MCHAT_NOMESSAGE_MODE --><div id="mChatNoMessage">{L_MCHAT_NOMESSAGE}</div><!-- ENDIF -->
 			</div>
 			<!-- IF not MCHAT_ARCHIVE_MODE -->
 			</div>
@@ -199,7 +199,7 @@
 	<!-- ENDIF -->
 	<!-- IF not MCHAT_READ_MODE -->
 		</div>
-	<span class="corners-bottom"><span></span></span></div>
+	</div>
 </div>
 	<!-- ENDIF -->
 <!-- IF MCHAT_ARCHIVE_MODE -->
