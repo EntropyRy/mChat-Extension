@@ -89,8 +89,8 @@ class listener implements EventSubscriberInterface
 			'core.user_setup'					 	=> 'load_language_on_setup',
 			'core.page_header'					 	=> 'add_page_header_link',
 			'core.index_modify_page_title'		 	=> 'display_mchat',
-			'core.display_forums_before'		 	=> 'display_mchat',
-			'core.viewtopic_get_post_data'		 	=> 'display_mchat',
+			'core.viewtopic_modify_page_title'	 	=> 'display_mchat',
+			'core.viewforum_get_topic_data'		 	=> 'display_mchat',
 			'core.posting_modify_submit_post_after'	=> 'posting_modify_submit_post_after',
 		);
 	}
