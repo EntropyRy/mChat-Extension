@@ -79,42 +79,6 @@
 				focusFix		: <!-- IF MCHAT_ARCHIVE_MODE -->false<!-- ELSE -->true<!-- ENDIF -->,
 				archiveMode		: <!-- IF MCHAT_ARCHIVE_MODE -->true<!-- ELSE -->false<!-- ENDIF -->
 			};
-			function insert_quote(user, text) {
-				var quote = decodeURIComponent(text.replace(/\+/g, " "));
-				quote = quote.replace(/&lt;/g, "<");
-				quote = quote.replace(/&gt;/g, ">");
-				quote = quote.replace(/&#58;/g, ':');
-				quote = quote.replace(/&#46;/g, '.');
-				quote = quote.replace(/&amp;/g, '&');
-				quote = quote.replace(/&quot;/g, '"');
-				var username = decodeURIComponent(user.replace(/\+/g, " "));
-				username = username.replace(/&lt;/g, "<");
-				username = username.replace(/&gt;/g, ">");
-				username = username.replace(/&#58;/g, ':');
-				username = username.replace(/&#46;/g, '.');
-				username = username.replace(/&amp;/g, '&');
-				username = username.replace(/&quot;/g, '"');
-				document.getElementById('mChatMessage').value += '[quote="' + username + '"]' + quote + '[/quote]';
-				document.getElementById('mChatMessage').focus();
-			}
-			function insert_like(user, text) {
-				var quote = decodeURIComponent(text.replace(/\+/g, " "));
-				quote = quote.replace(/&lt;/g, "<");
-				quote = quote.replace(/&gt;/g, ">");
-				quote = quote.replace(/&#58;/g, ':');
-				quote = quote.replace(/&#46;/g, '.');
-				quote = quote.replace(/&amp;/g, '&');
-				quote = quote.replace(/&quot;/g, '"');
-				var username = decodeURIComponent(user.replace(/\+/g, " "));
-				username = username.replace(/&lt;/g, "<");
-				username = username.replace(/&gt;/g, ">");
-				username = username.replace(/&#58;/g, ':');
-				username = username.replace(/&#46;/g, '.');
-				username = username.replace(/&amp;/g, '&');
-				username = username.replace(/&quot;/g, '"');
-				document.getElementById('mChatMessage').value += '' + mChat.likes + '[quote="' + username + '"]' + quote + '[/quote]';
-				document.getElementById('mChatMessage').focus();
-			}
 			// ]]>
 			</script>
 			<!-- IF not MCHAT_ARCHIVE_MODE -->
@@ -125,14 +89,8 @@
             <!-- ENDIF -->
 			<!-- ENDIF -->
 			<div id="mChatData">
-                <!-- ENDIF -->
-			<!-- IF S_MCHAT_AVATARS == 1 -->
-				<!-- INCLUDE mchat_avatars.html -->
-			<!-- ELSEIF S_MCHAT_AVATARS == 0 -->
-                <!-- INCLUDE mchat_no_avatars.html -->
-            <!-- ELSEIF S_MCHAT_AVATARS == 2 -->
-				<!-- INCLUDE mchat_simple_msg.html -->
 			<!-- ENDIF -->
+			<!-- INCLUDE mchat_messages.html -->
 			<!-- IF not MCHAT_READ_MODE -->
 			<!-- IF MCHAT_NOMESSAGE_MODE --><div id="mChatNoMessage">{L_MCHAT_NOMESSAGE}</div><!-- ENDIF -->
 			</div>
