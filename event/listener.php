@@ -70,14 +70,13 @@ class listener implements EventSubscriberInterface
 	static public function getSubscribedEvents()
 	{
 		return array(
-			'core.viewonline_overwrite_location' 	=> 'add_page_viewonline',
-			'core.user_setup'					 	=> 'load_language_on_setup',
-			'core.page_header'					 	=> 'add_page_header_link',
-			'core.index_modify_page_title'		 	=> 'display_mchat',
-			'core.viewtopic_modify_page_title'	 	=> 'display_mchat',
-			'core.viewforum_get_topic_ids_data'		 	=> 'display_mchat',
-			'core.posting_modify_submit_post_after'	=> 'posting_modify_submit_post_after',
-			'core.permissions'						=> 'permissions',
+			'core.viewonline_overwrite_location' 		=> 'add_page_viewonline',
+			'core.user_setup'					 		=> 'load_language_on_setup',
+			'core.page_header'					 		=> 'add_page_header_link',
+			'core.display_forums_modify_sql'		 	=> 'display_mchat',
+			'core.viewtopic_get_post_data'		 		=> 'display_mchat',
+			'core.posting_modify_submit_post_after'		=> 'posting_modify_submit_post_after',
+			'core.permissions'							=> 'permissions',
 			'core.display_custom_bbcodes_modify_sql'	=> 'display_custom_bbcodes_modify_sql',
 		);
 	}
@@ -128,12 +127,11 @@ class listener implements EventSubscriberInterface
 		$mchat_view	= ($this->auth->acl_get('u_mchat_view')) ? true : false;
 
 		if ($mchat_on_index && $mchat_view)
-        { 
+		{
 			$this->template->assign_var('S_MCHAT_ON_INDEX', true);
 
 			$this->render_helper->render_data_for_page(true);
 		}
-        
 	}
 
 	public function posting_modify_submit_post_after($event)
