@@ -1099,6 +1099,8 @@ class render_helper
 			'U_MCHAT_RULES'					=> $this->helper->route('dmzx_mchat_controller', array('mode' => 'rules')),
 			'S_MCHAT_ON_INDEX'				=> $this->config['mchat_on_index'] && !empty($this->user->data['user_mchat_index']),
 			'EXT_URL'						=> generate_board_url() . '/ext/dmzx/mchat/',
+            'S_MCHAT_MOBILE_BEFORE'			=> $this->user->data['user_mchat_mobile_before'], //Entropy variable
+            'S_MCHAT_TITLEFLASHDURATION'    => $this->user->data['user_mchat_titleflash_duration'], //Entropy variable
 		));
 
 		// Return for $this->helper->render(filename, lang_title);
