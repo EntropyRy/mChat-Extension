@@ -73,8 +73,8 @@ class listener implements EventSubscriberInterface
 			'core.viewonline_overwrite_location' 		=> 'add_page_viewonline',
 			'core.user_setup'					 		=> 'load_language_on_setup',
 			'core.page_header'					 		=> 'add_page_header_link',
-			'core.display_forums_modify_sql'		 	=> 'display_mchat',
-			'core.viewtopic_get_post_data'		 		=> 'display_mchat',
+			'core.index_modify_page_title'     		 	=> 'display_mchat',
+			'core.generate_forum_nav'        		 	=> 'display_mchat',
 			'core.posting_modify_submit_post_after'		=> 'posting_modify_submit_post_after',
 			'core.permissions'							=> 'permissions',
 			'core.display_custom_bbcodes_modify_sql'	=> 'display_custom_bbcodes_modify_sql',
@@ -122,13 +122,24 @@ class listener implements EventSubscriberInterface
 	 * @access public
 	 */
 	public function display_mchat($event)
-	{
-		$mchat_on_index = $this->config['mchat_on_index'];
+    {
+		$mchat_on_index =       $this->config['mchat_on_index'];
+		$mchat_on_viewtopic =   $this->config['mchat_on_viewtopic'];
+        $mchat_on_viewforum =   $this->config['mchat_on_viewforum'];
+
 		$mchat_view	= ($this->auth->acl_get('u_mchat_view')) ? true : false;
 
-		if ($mchat_on_index && $mchat_view)
-		{
-			$this->template->assign_var('S_MCHAT_ON_INDEX', true);
+		if (($mchat_on_index || $mchat_on_viewtopic || $mchat_on_viewforum) && $mchat_view)
+        {
+            if ($mchat_on_index){
+                $this->template->assign_var('S_MCHAT_ON_INDEX', true);
+            }
+            if ($mchat_on_viewtopic){
+                $this->template->assign_var('S_MCHAT_ON_VIEWTOPIC', true);
+            }
+            if ($mchat_on_viewforum){
+                $this->template->assign_var('S_MCHAT_ON_VIEWFORUM', true);
+            }
 
 			$this->render_helper->render_data_for_page(true);
 		}

@@ -1,35 +1,41 @@
 <!-- IF MCHAT_ENABLE and SCRIPT_NAME != "app/chat" and S_MCHAT_LOCATION == 2 and not S_MCHAT_MOBILE_BEFORE -->
-<style>
-@media only screen and (min-width: 1050px), only screen and (min-device-width: 1050px) {
-    #page-body {
-        clear: none;
-        width: 70%;
-        float: left;
+    <!-- IF (S_MCHAT_ON_VIEWFORUM and SCRIPT_NAME=='viewforum') or (S_MCHAT_ON_VIEWTOPIC and SCRIPT_NAME=='viewtopic') or (S_MCHAT_ON_INDEX and SCRIPT_NAME=='index') -->
+    <style>
+    @media only screen and (min-width: 1050px), only screen and (min-device-width: 1050px) {
+        #page-body {
+            clear: none;
+            width: 70%;
+            float: left;
+        }
+        #page-body2{
+            padding-top: 10px;
+            width: 29%;
+            float:right;
+        }
     }
-    #page-body2{
-        padding-top: 10px;
-        width: 29%;
-        float:right;
-    }
-}
-@media only screen and (max-width: 1050px), only screen and (max-device-width: 1050px) {
-    #page-body {
-        clear: both;
-        width: 100%;
-        float: none;
-    }
-    #page-body2{
-        padding-top: 10px;
-        width: 100%;
-        float: none;
-    }
-    #mChatmain{
-        height: 165px !important;
-    }
-}    
-</style>
-    <div id="page-body2">
+    @media only screen and (max-width: 1050px), only screen and (max-device-width: 1050px) {
+        #page-body {
+            clear: both;
+            width: 100%;
+            float: none;
+        }
+        #page-body2{
+            padding-top: 10px;
+            width: 100%;
+            float: none;
+        }
+        #mChatmain{
+            height: 165px !important;
+        }
+    }    
+    </style>
+        <div id="page-body2">
+            <!-- INCLUDE mchat_body.html -->
+        </div>
+    <!-- ENDIF -->
+<!-- ENDIF -->
+<!-- IF MCHAT_ENABLE and S_MCHAT_LOCATION == 0 and SCRIPT_NAME != "app/chat"-->
+    <!-- IF (S_MCHAT_ON_VIEWFORUM and SCRIPT_NAME=='viewforum') or (S_MCHAT_ON_VIEWTOPIC and SCRIPT_NAME=='viewtopic') -->
         <!-- INCLUDE mchat_body.html -->
-    </div>
-
+    <!-- ENDIF -->
 <!-- ENDIF -->

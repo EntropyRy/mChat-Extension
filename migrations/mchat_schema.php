@@ -19,6 +19,7 @@ class mchat_schema extends \phpbb\db\migration\migration
 			// Add configs
 			array('config.add', array('mchat_enable', true)),
 			array('config.add', array('mchat_on_index', true)),
+			array('config.add', array('mchat_on_viewtopic', false)),
 			array('config.add', array('mchat_new_posts', false)),
 			array('config.add', array('mchat_new_posts_topic', false)),
 			array('config.add', array('mchat_new_posts_reply', false)),

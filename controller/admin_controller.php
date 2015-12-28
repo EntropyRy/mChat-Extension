@@ -190,6 +190,8 @@ class admin_controller
 
 		$mchat_enable = isset($this->config['mchat_enable']) ? $this->config['mchat_enable'] : 0;
 		$mchat_on_index = isset($this->config['mchat_on_index']) ? $this->config['mchat_on_index'] : 0;
+		$mchat_on_viewtopic = isset($this->config['mchat_on_viewtopic']) ? $this->config['mchat_on_viewtopic'] : 0;
+		$mchat_on_viewforum = isset($this->config['mchat_on_viewforum']) ? $this->config['mchat_on_viewforum'] : 0;
 		$mchat_version = isset($this->config['mchat_version']) ? $this->config['mchat_version'] : '';
 		$mchat_new_posts = isset($this->config['mchat_new_posts']) ? $this->config['mchat_new_posts'] : 0;
 		$mchat_new_posts_topic = isset($this->config['mchat_new_posts_topic']) ? $this->config['mchat_new_posts_topic'] : 0;
@@ -223,6 +225,8 @@ class admin_controller
 			'MCHAT_PRUNE_NUM'				=> !empty($mchat_row['prune_num']) ? $mchat_row['prune_num'] : $mchat_config['prune_num'],
 			'MCHAT_ENABLE'					=> ($mchat_enable) ? true : false,
 			'MCHAT_ON_INDEX'				=> ($mchat_on_index) ? true : false,
+			'MCHAT_ON_VIEWTOPIC'			=> ($mchat_on_viewtopic) ? true : false,
+			'MCHAT_ON_VIEWFORUM'			=> ($mchat_on_viewforum) ? true : false,
 			'MCHAT_MESSAGE_TOP'				=> ($mchat_message_top) ? true : false,
 			'MCHAT_LOCATION'				=> !empty($mchat_row['location']) ? $mchat_row['location'] : $mchat_config['location'],
 			'MCHAT_REFRESH'					=> !empty($mchat_row['refresh']) ? $mchat_row['refresh'] : $mchat_config['refresh'],
@@ -307,6 +311,10 @@ class admin_controller
 		$this->config->set('mchat_enable', $this->request->variable('mchat_enable', 0));
 		// update setting in config table for allowing on index or not
 		$this->config->set('mchat_on_index', $this->request->variable('mchat_on_index', 0));
+		// update setting in config table for allowing on viewtopic or not
+		$this->config->set('mchat_on_viewtopic', $this->request->variable('mchat_on_viewtopic', 0));
+		// update setting in config table for allowing on viewforum or not
+		$this->config->set('mchat_on_viewforum', $this->request->variable('mchat_on_viewforum', 0));
 		// update setting in config table to enable posts to display or not
 		$this->config->set('mchat_new_posts', $this->request->variable('mchat_new_posts', 0));
 		// update setting in config table to allow topic to display or not

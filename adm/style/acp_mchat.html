@@ -106,6 +106,18 @@
 			<label><input type="radio" class="radio" name="mchat_on_index" value="0"<!-- IF not MCHAT_ON_INDEX --> id="mchat_on_index" checked="checked"<!-- ENDIF --> /> {L_NO}</label></dd>
 		</dl>
 		<dl>
+			<dt><label for="mchat_on_viewtopic">{L_MCHAT_ON_VIEWTOPIC}{L_COLON}</label><br />
+			<span>{L_MCHAT_ON_VIEWTOPIC_EXPLAIN}</span></dt>
+			<dd><label><input type="radio" class="radio" name="mchat_on_viewtopic" value="1"<!-- IF MCHAT_ON_VIEWTOPIC --> id="mchat_on_viewtopic" checked="checked"<!-- ENDIF --> /> {L_YES}</label>
+			<label><input type="radio" class="radio" name="mchat_on_viewtopic" value="0"<!-- IF not MCHAT_ON_VIEWTOPIC --> id="mchat_on_viewtopic" checked="checked"<!-- ENDIF --> /> {L_NO}</label></dd>
+		</dl>
+		<dl>
+			<dt><label for="mchat_on_viewforum">{L_MCHAT_ON_VIEWFORUM}{L_COLON}</label><br />
+			<span>{L_MCHAT_ON_VIEWFORUM_EXPLAIN}</span></dt>
+			<dd><label><input type="radio" class="radio" name="mchat_on_viewforum" value="1"<!-- IF MCHAT_ON_VIEWFORUM --> id="mchat_on_viewforum" checked="checked"<!-- ENDIF --> /> {L_YES}</label>
+			<label><input type="radio" class="radio" name="mchat_on_viewforum" value="0"<!-- IF not MCHAT_ON_VIEWFORUM --> id="mchat_on_viewforum" checked="checked"<!-- ENDIF --> /> {L_NO}</label></dd>
+		</dl>
+		<dl>
 			<dt><label for="mchat_index_height">{L_MCHAT_INDEX_HEIGHT}{L_COLON}</label><br />
 			<span>{L_MCHAT_INDEX_HEIGHT_EXPLAIN}</span></dt>
 			<dd><input type="text" name="mchat_index_height" id="mchat_index_height" size="10" maxlength="4" value="{MCHAT_INDEX_HEIGHT}" /></dd>

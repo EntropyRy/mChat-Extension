@@ -1098,6 +1098,8 @@ class render_helper
 			'U_MORE_SMILIES'				=> append_sid("{$this->phpbb_root_path}posting.{$this->phpEx}", 'mode=smilies'),
 			'U_MCHAT_RULES'					=> $this->helper->route('dmzx_mchat_controller', array('mode' => 'rules')),
 			'S_MCHAT_ON_INDEX'				=> $this->config['mchat_on_index'] && !empty($this->user->data['user_mchat_index']),
+			'S_MCHAT_ON_VIEWTOPIC'			=> $this->config['mchat_on_viewtopic'],
+			'S_MCHAT_ON_VIEWFORUM'			=> $this->config['mchat_on_viewforum'],
 			'EXT_URL'						=> generate_board_url() . '/ext/dmzx/mchat/',
             'S_MCHAT_MOBILE_BEFORE'			=> $this->user->data['user_mchat_mobile_before'], //Entropy variable
             'S_MCHAT_TITLEFLASHDURATION'    => $this->user->data['user_mchat_titleflash_duration'], //Entropy variable
