@@ -30,6 +30,7 @@
             <dd><input type="text" name="user_mchat_titleflash_duration" size="10" value="{S_MCHAT_TITLEFLASHDURATION}" /></dd>
 		</dd>
     </dl>
+    <!-- IF S_MCHAT_LOCATION == 2 -->
 	<dl>
 		<dt><label for="mchat_mobile_before">{L_MOBILE_MCHAT}{L_COLON}</label></dt>
 		<dd>
@@ -42,6 +43,14 @@
 		<dd>
 			<label><input type="radio" name="user_mchat_follow" value="1"<!-- IF S_MCHAT_FOLLOW --> id="user_mchat_follow" checked="checked"<!-- ENDIF --> /> {L_YES}</label>
 			<label><input type="radio" name="user_mchat_follow" value="0"<!-- IF not S_MCHAT_FOLLOW --> id="user_mchat_follow" checked="checked"<!-- ENDIF --> /> {L_NO}</label>
+		</dd>
+    </dl>
+    <!-- ENDIF -->
+	<dl>
+		<dt><label for="mchat_mobile_before">{L_MCHAT_CAPITALIZATION}{L_COLON}</label></dt>
+		<dd>
+			<label><input type="radio" name="user_mchat_capitalization" value="1"<!-- IF S_MCHAT_CAPITALIZATION --> id="user_mchat_capitalization" checked="checked"<!-- ENDIF --> /> {L_YES}</label>
+			<label><input type="radio" name="user_mchat_capitalization" value="0"<!-- IF not S_MCHAT_CAPITALIZATION --> id="user_mchat_capitalization" checked="checked"<!-- ENDIF --> /> {L_NO}</label>
 		</dd>
     </dl>
 	<!-- IF S_MCHAT_INDEX -->
@@ -62,7 +71,7 @@
 		</dd>
 	</dl>
 	<!-- ENDIF -->
-	<!-- IF S_MCHAT_AVATARS -->
+	<!-- IF S_MCHAT_AVATARS == 1 -->
 	<dl>
 		<dt><label for="mchat_avatars">{L_DISPLAY_AVATARS}{L_COLON}</label></dt>
 		<dd>

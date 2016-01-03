@@ -412,7 +412,15 @@ class render_helper
 					throw new \phpbb\exception\http_exception(403, 'MCHAT_NOACCESS');
 				}
 
-				$message = utf8_ucfirst($this->request->variable('message', '', true));
+                // User can choose the capitalization
+                if (!$this->user->data['mchat_capitalization'])
+                {
+    				$message = utf8_ucfirst($this->request->variable('message', '', true));
+                }
+                else 
+                {
+    				$message = $this->request->variable('message', '', true);
+                }
 
 				// Must have something other than bbcode in the message
 				$message_chars = trim(preg_replace('#\[/?[^\[\]]+\]#mi', '', $message));

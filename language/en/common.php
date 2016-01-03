@@ -101,6 +101,7 @@ $lang = array_merge($lang, array(
 
     // UCP
     'MCHAT_TITLEFLASHDURATION'      => 'mChat title flash duration in ms. default: 0 forever (until forcus). Below 700ms disables flashing',
+    'MCHAT_CAPITALIZATION'          => 'Autocapitalize your messages?',
 	'MOBILE_MCHAT'          		=> 'Mobile mChat before the forums',
 	'MCHAT_FOLLOW'          		=> 'mChat follows the scroll',
 	'UCP_PROFILE_MCHAT'				=> 'mChat Preferences',
