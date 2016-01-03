@@ -413,7 +413,7 @@ class render_helper
 				}
 
                 // User can choose the capitalization
-                if (!$this->user->data['mchat_capitalization'])
+                if ($this->user->data['user_mchat_capitalization'])
                 {
     				$message = utf8_ucfirst($this->request->variable('message', '', true));
                 }
