@@ -289,6 +289,7 @@ class render_helper
             'S_MCHAT_FOLLOW'    			=> $this->user->data['user_mchat_follow'], 
 			'S_MCHAT_ON_VIEWTOPIC'			=> $this->config['mchat_on_viewtopic'],
 			'S_MCHAT_ON_VIEWFORUM'			=> $this->config['mchat_on_viewforum'],
+			'S_MCHAT_SIMPLE_MSG'			=> $this->config['mchat_simple_msg'],
 		));
 
 		if (!$on_index)

@@ -178,8 +178,13 @@
 			<dt><label for="mchat_avatars">{L_MCHAT_AVATARS}{L_COLON}</label><br />
 			<span>{L_MCHAT_AVATARS_EXPLAIN}</span></dt>
 			<dd><label><input type="radio" class="radio" name="mchat_avatars" value="1"<!-- IF MCHAT_AVATARS == 1 --> id="mchat_avatars" checked="checked"<!-- ENDIF --> /> {L_YES}</label>
-			<label><input type="radio" class="radio" name="mchat_avatars" value="0"<!-- IF MCHAT_AVATARS == 0 --> id="mchat_avatars" checked="checked"<!-- ENDIF --> /> {L_NO}</label>
-			<label><input type="radio" class="radio" name="mchat_avatars" value="2"<!-- IF MCHAT_AVATARS == 2 --> id="mchat_avatars" checked="checked"<!-- ENDIF --> /> {L_MCHAT_SIMPLE_MSG}</label></dd>
+			<label><input type="radio" class="radio" name="mchat_avatars" onclick="phpbb.toggleDisplay('simple_msg',1);" value="0"<!-- IF MCHAT_AVATARS == 0 --> id="mchat_avatars" checked="checked"<!-- ENDIF --> /> {L_NO}</label>
+        </dl>
+        <dl <!-- IF MCHAT_AVATARS --> class="hidden" <!-- ENDIF --> id="simple_msg">
+			<dt><label for="mchat_simple_msg">{L_MCHAT_SIMPLE_MSG}{L_COLON}</label><br />
+			<span>{L_MCHAT_SIMPLE_MSG_EXPLAIN}</span></dt>
+			<dd><label><input type="radio" class="radio" name="mchat_simple_msg" value="1"<!-- IF MCHAT_SIMPLE_MSG == 1 --> id="mchat_simple_msg" checked="checked"<!-- ENDIF --> /> {L_YES}</label>
+			<label><input type="radio" class="radio" name="mchat_simple_msg" value="0"<!-- IF MCHAT_SIMPLE_MSG == 0 --> id="mchat_simple_msg" checked="checked"<!-- ENDIF --> /> {L_NO}</label>
 		</dl>
 		<dl>
 			<dt><label for="mchat_pause_on_input">{L_MCHAT_PAUSE_ON_INPUT}{L_COLON}</label><br />
