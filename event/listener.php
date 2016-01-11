@@ -115,9 +115,12 @@ class listener implements EventSubscriberInterface
 	 * @access public
 	 */
 	public function display_mchat($event)
-	{
-		$this->render_helper->render_data_for_page(true);
-		$this->render_helper->assign_whois();
+    {
+        if($this->render_helper->check_page())
+        {
+    		$this->render_helper->render_data_for_page(true);
+            $this->render_helper->assign_whois();
+        }
 	}
 
 	public function posting_modify_submit_post_after($event)

@@ -90,8 +90,27 @@ class render_helper
 		$this->phpbb_root_path	= $phpbb_root_path;
 		$this->phpEx			= $phpEx;
 		$this->mchat_table		= $mchat_table;
-	}
+    }
 
+	/**
+	* Method to check the page
+	*
+	* @return bool              Allow script load on 	
+	*/
+
+    public function check_page()
+    {
+        $script = basename($this->request->server('SCRIPT_FILENAME'));
+        if (($this->config['mchat_on_index'] and $script == "index.php") or ($this->config['mchat_on_viewforum'] and $script == "viewforum.php") or ($this->config['mchat_on_viewtopic'] and $script == "viewtopic.php"))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+    }
 	/**
 	* Method to render the page data
 	*
@@ -531,7 +550,7 @@ class render_helper
 
 			case 'edit':
 				$message_id = $this->request->variable('message_id', 0);
-
+                
 				if (!$message_id)
 				{
 					// Forbidden
@@ -572,7 +591,7 @@ class render_helper
 				if (!$message || !utf8_strlen($message_chars))
 				{
 					// Not Implemented (for jQ AJAX request)
-					throw new \phpbb\exception\http_exception(501, 'MCHAT_ERROR_NOT_IMPLEMENTED');
+				    throw new \phpbb\exception\http_exception(501, 'MCHAT_ERROR_NOT_IMPLEMENTED');
 				}
 
 				// Message limit
