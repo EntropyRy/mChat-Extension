@@ -89,7 +89,7 @@ class ucp_mchat_module
 					'S_MCHAT_TITLEFLASHDURATION'=> $data['user_mchat_titleflash_duration'],
 					'S_MCHAT_CAPITALIZATION'    => $data['user_mchat_capitalization'],
 					'S_MCHAT_TOPICS'	        => $config['mchat_new_posts'],
-					'S_MCHAT_LOCATION'	        => $data['location'],
+					'S_MCHAT_LOCATION'	        => $config['mchat_location'],
 					'S_MCHAT_INDEX'	        	=> $config['mchat_on_index'] || $config['mchat_stats_index'],
 					'S_MCHAT_AVATARS'       	=> $config['avatars'],
 				));
