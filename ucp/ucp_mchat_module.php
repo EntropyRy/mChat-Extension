@@ -11,15 +11,9 @@ namespace dmzx\mchat\ucp;
 
 class ucp_mchat_module
 {
-	/** @var \dmzx\mchat\core\functions_mchat */
-	protected $functions_mchat;
-
 	function main($id, $mode)
 	{
 		global $cache, $config, $db, $user, $auth, $template, $phpbb_root_path, $phpEx, $request;
-		global $phpbb_container;
-
-		$this->functions_mchat = $phpbb_container->get('dmzx.mchat.functions_mchat');
 
 		$submit = (isset($_POST['submit'])) ? true : false;
 		$error = $data = array();
@@ -81,15 +75,9 @@ class ucp_mchat_module
 					// Replace "error" strings with their real, localised form
 					$error = preg_replace('#^([A-Z_]+)$#e', "(!empty(\$user->lang['\\1'])) ? \$user->lang['\\1'] : '\\1'", $error);
 				}
-				if (($mchat_cache = $cache->get('_mchat_config')) === false)
-				{
-					$this->functions_mchat->mchat_cache();
-				}
-                $mchat_cache = $cache->get('_mchat_config');
 
 				$template->assign_vars(array(
 					'ERROR'			=> (sizeof($error)) ? implode('<br />', $error) : '',
-
 					'S_DISPLAY_MCHAT'       	=> $data['user_mchat_index'],
 					'S_SOUND_MCHAT'	        	=> $data['user_mchat_sound'],
 					'S_STATS_MCHAT'		        => $data['user_mchat_stats_index'],
@@ -101,9 +89,9 @@ class ucp_mchat_module
 					'S_MCHAT_TITLEFLASHDURATION'=> $data['user_mchat_titleflash_duration'],
 					'S_MCHAT_CAPITALIZATION'    => $data['user_mchat_capitalization'],
 					'S_MCHAT_TOPICS'	        => $config['mchat_new_posts'],
-					'S_MCHAT_LOCATION'	        => $mchat_cache['location'],
-					'S_MCHAT_INDEX'	        	=> ($config['mchat_on_index'] || $config['mchat_stats_index']) ? true : false,
-					'S_MCHAT_AVATARS'       	=> $mchat_cache['avatars'],
+					'S_MCHAT_LOCATION'	        => $data['location'],
+					'S_MCHAT_INDEX'	        	=> $config['mchat_on_index'] || $config['mchat_stats_index'],
+					'S_MCHAT_AVATARS'       	=> $config['avatars'],
 				));
 			break;
 
