@@ -73,7 +73,16 @@ class ucp_mchat_module
 					}
 
 					// Replace "error" strings with their real, localised form
-					$error = preg_replace('#^([A-Z_]+)$#e', "(!empty(\$user->lang['\\1'])) ? \$user->lang['\\1'] : '\\1'", $error);
+					// The /e modifier is deprecated since PHP 5.5.0
+					//$error = preg_replace('#^([A-Z_]+)$#e', "(!empty(\$user->lang['\\1'])) ? \$user->lang['\\1'] : '\\1'", $error);
+					foreach ($error as $i => $err)
+					{
+						$lang = $this->user->lang($err);
+						if (!empty($lang))
+						{
+							$error[$i] = $lang;
+						}
+					}
 				}
 
 				$template->assign_vars(array(
@@ -88,9 +97,10 @@ class ucp_mchat_module
 					'S_MCHAT_FOLLOW'    		=> $data['user_mchat_follow'],
 					'S_MCHAT_TITLEFLASHDURATION'=> $data['user_mchat_titleflash_duration'],
 					'S_MCHAT_CAPITALIZATION'    => $data['user_mchat_capitalization'],
-					'S_MCHAT_TOPICS'	        => $config['mchat_new_posts'],
+					'S_MCHAT_TOPICS'		=> $config['mchat_new_posts_edit'] || $config['mchat_new_posts_quote'] || $config['mchat_new_posts_reply'] || $config['mchat_new_posts_topic'],
 					'S_MCHAT_LOCATION'	        => $config['mchat_location'],
 					'S_MCHAT_INDEX'	        	=> $config['mchat_on_index'] || $config['mchat_stats_index'],
+					'S_MCHAT_INDEX_STATS'	=> $config['mchat_stats_index'],
 					'S_MCHAT_AVATARS'       	=> $config['avatars'],
 				));
 			break;
