@@ -56,3 +56,9 @@ services:
             - '%core.php_ext%'
         tags:
             - { name: event.listener }
+    dmzx.mchat.event.add_form_key:
+        class: dmzx\mchat\event\add_form_key
+        arguments:
+            - '@template'
+        tags:
+            - { name: event.listener }

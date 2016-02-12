@@ -53,6 +53,7 @@ class listener implements EventSubscriberInterface
 			'core.user_setup'							=> 'load_language_on_setup',
 			'core.page_header'							=> 'add_page_header_link',
 			'core.index_modify_page_title'				=> 'display_mchat',
+            
 			'core.generate_forum_nav'        		 	=> 'display_mchat',
 			'core.posting_modify_submit_post_after'		=> 'posting_modify_submit_post_after',
 			'core.permissions'							=> 'permissions',
